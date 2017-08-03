@@ -5,7 +5,7 @@ I'll have one data model hold the SQL please
 Andrew and Ed
 
 BASIC)
-
+[Users Blueprint]
 {
   id: int, serialize
   username: str, user chooses,
@@ -36,7 +36,7 @@ BASIC)
 }
 
 INTERMEDIATE-1)
-
+[Table Index Blueprint]
 // Indexes for available tables
 {
 	"9:00": [5, 7, 12] // Tables 5, 7, and 12 are available.
@@ -44,6 +44,7 @@ INTERMEDIATE-1)
 	"11:00": [3, 4, 5] // Tables 5, 7, and 12 are available.
 }
 
+[Server Index Blueprint]
 // Indexes for wait-staff serving corresponding table for that time slot.
 {
 	"9:00": [5, 7, 12] // Server 5, 7, and 12 are available.
@@ -51,7 +52,7 @@ INTERMEDIATE-1)
 	"11:00": [3, 4, 5] // Server 5, 7, and 12 are available.
 }
 
-// Data table
+[Tables Blueprint]
 {
 	tables: [
 		{
@@ -68,4 +69,26 @@ INTERMEDIATE-1)
 			}
 		}
 	]
+}
+
+INTERMEDIATE-2)
+[Users Blueprint]
+{
+	id: int, serialize
+  username: str, user chooses,
+  pw: str, encrypted
+	semesters: {
+	  season_year: {
+			class_id: {
+				instructor: str,
+				teachers_assistant: str,
+				overall_grade: str or number?,
+				exams: {
+					exam_id: {
+						grade: str or number?
+					}
+				}
+			}
+		}
+	}
 }
