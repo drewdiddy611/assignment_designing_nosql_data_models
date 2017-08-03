@@ -92,3 +92,69 @@ INTERMEDIATE-2)
 		}
 	}
 }
+
+
+Advanced 1)
+
+<!-- // depts
+dept: {
+  product1: {
+    product_id: varchar
+    current_price: int
+    price_history: {
+      month_year: int
+    }
+    description: text, unlimited
+  }
+} -->
+
+Products: {
+  product_id:
+  dept:
+  price:
+  quantity_in_stock_now:
+  sales_history: {
+    month_year: {
+      price:
+      cost: 
+      units_sold:
+      revenue:
+    }
+  }
+}
+
+Transactions: {
+  transaction_id: {
+    product_id: {
+      {PRODUCT} //sales history?
+      units_sold:      
+      revenue:
+    }
+  }
+}
+
+//index table for depts' product ids
+Dept_Products_index_table: {
+  dept1: [product_id_A, product_id_B, product_id_C]
+  dept2: [product_id_x, product_id_Y, product_id_Z]
+}
+
+Sales_Histories: {
+  product_id: {
+    month_year: {
+      price:
+      cost: 
+      units_sold:
+      revenue:
+    }
+  }
+}
+
+
+
+
+}
+
+
+
+
