@@ -1,11 +1,11 @@
 # assignment_designing_nosql_data_models
-I'll have one data model hold the SQL please
+//I'll have one data model hold the SQL please
 
 
-Andrew and Ed
+// Andrew and Ed
 
-BASIC)
-[Users Blueprint]
+// BASIC)
+// [Users Blueprint]
 {
   id: int, serialize
   username: str, user chooses,
@@ -35,8 +35,8 @@ BASIC)
     }
 }
 
-INTERMEDIATE-1)
-[Table Index Blueprint]
+// INTERMEDIATE-1)
+// [Table Index Blueprint]
 // Indexes for available tables
 {
 	"9:00": [5, 7, 12] // Tables 5, 7, and 12 are available.
@@ -44,7 +44,7 @@ INTERMEDIATE-1)
 	"11:00": [3, 4, 5] // Tables 5, 7, and 12 are available.
 }
 
-[Server Index Blueprint]
+// [Server Index Blueprint]
 // Indexes for wait-staff serving corresponding table for that time slot.
 {
 	"9:00": [5, 7, 12] // Server 5, 7, and 12 are available.
@@ -52,7 +52,7 @@ INTERMEDIATE-1)
 	"11:00": [3, 4, 5] // Server 5, 7, and 12 are available.
 }
 
-[Tables Blueprint]
+// [Tables Blueprint]
 {
 	tables: [
 		{
@@ -71,8 +71,8 @@ INTERMEDIATE-1)
 	]
 }
 
-INTERMEDIATE-2)
-[Users Blueprint]
+// INTERMEDIATE-2)
+// [Users Blueprint]
 {
 	id: int, serialize
   username: str, user chooses,
@@ -94,76 +94,37 @@ INTERMEDIATE-2)
 }
 
 
-Advanced 1)
-
-<!-- // depts
-dept: {
-  product1: {
-    product_id: varchar
-    current_price: int
-    price_history: {
-      month_year: int
-    }
-    description: text, unlimited
-  }
-} -->
-[
-	{
-		"_id" : ObjectId("5546329a470000850084a621"),
-		"name": "Joe",
-		"surname": "Smith",
-		"accounts": [
-			{
-				"_id" : ObjectId("5546329a470000850084a655"),
-				"default": true,
-				"status" : "approved",
-				"activationTime" : ISODate("2013-05-03T14:37:15.025Z")
-			},
-			{
-				"_id" : ObjectId("5546329a470000850084a688"),
-				"default": true,
-				"status" : "approved",
-				"activationTime" : ISODate("2014-06-03T14:37:15.025Z")
-			}
-		]
-	}
-]
-
-
-
-
-
-
-
+// Advanced 1)
 {
 	collections: [
-
 		// Keep track of products and their
 		// corresponding prices.
-		[Products]: [{
-			(_id):
-		  name:
-		  dept:
-		  price:
-		  quantity:
-		}],
-
+		[Products]: [
+			{
+				// (_id):
+			  name:
+			  dept:
+			  price:
+			  quantity:
+			}
+		],
 		// Keep track of revenue as prices
 		// change over time.
-		[Products_Price_History]: [{
-			(_id):
-			product: (Products._id)
-			sales_history: [ // Association on-the-fly
-				{
-					gmt_created:
-					price:
-					cost:
-					units_sold:
-					revenue:
-				}
-			]
-		}],
-
+		[Products_Price_History]: [
+			{
+				// (_id):
+				product: (Products._id)
+				sales_history: [ // Association on-the-fly
+					{
+						gmt_created:
+						price:
+						cost:
+						units_sold:
+						revenue:
+					}
+				]
+			}
+		],
 	]
 }
 
@@ -171,7 +132,6 @@ dept: {
 
 
 
-Read -> Change Values -> Save
 
 Transactions: {
   transaction_id: {
@@ -179,7 +139,7 @@ Transactions: {
 			dept:
 		  price:
 		  quantity_in_stock_now:
-			units_sold:      
+			units_sold:
       revenue:
 		  sales_history: { //?? Sales History included?
 		    month_year: {
